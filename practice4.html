@@ -1,0 +1,36 @@
+<html>
+<head></head>
+<body>
+    <form method="post" action="">
+        <label for="dimension">Enter Dimension: </label>
+        <input type="text" id="dimension" name ="dimension" value="">
+        <button type="submit">Build Table</button>
+    </form>
+
+    <?php
+    function buildMultiplicationTable($dimension) {
+        echo "<table border='2' cellpadding='5' cellspacing='0'>";
+        // Create the header row
+        echo "<tr><th></th>";
+        for ($i = 1; $i <= $dimension; $i++) {
+            echo "<th>$i</th>";
+        }
+        echo "</tr>";
+        // Create the table body
+        for ($i = 1; $i <= $dimension; $i++) {
+            echo "<tr>";
+            // Create the header column
+            echo "<th>$i</th>";
+            for ($j = 1; $j <= $dimension; $j++) {
+                echo "<td>" . ($i * $j) . "</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+    }
+    $dimension = intval($_POST['dimension']);
+    buildMultiplicationTable($dimension);
+    ?>
+</body>
+</html>
+

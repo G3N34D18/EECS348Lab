@@ -1,0 +1,33 @@
+<html>
+<head></head>
+<body>
+<label for="pWord1">Enter your password: </label>
+<input type="text" id="pWord1" value="">
+<br><br>
+<label for="pWord2">Enter your password again: </label>
+<input type="text" id="pWord2" value="">
+<br><br>
+<button type="button" onclick="checkPassword()">Check Password: </button>
+
+<script>
+function checkPassword() {
+	let pWord1 = document.getElementById("pWord1").value;
+	let pWord2 = document.getElementById("pWord2").value;
+	
+	if (pWord1.length < 8) {
+		alert("Your first password entry is not 8 characters long.");
+	}
+	else if (pWord2.length < 8) {
+		alert("Your second password entry is not 8 characters long.");
+	}
+	else if(pWord1 == pWord2) {
+		alert("Your passwords match!");
+	}
+	else {
+		alert("Your passwords do not match.")
+	}
+}
+</script>
+</body>
+</html>
+

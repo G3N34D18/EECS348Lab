@@ -1,0 +1,65 @@
+<html>
+<head>
+<style>
+p {
+	border: solid;
+	border-width: 0;
+	border-color: RGB(255,255,255);
+	background-color: RGB(255,255,255);
+}
+
+</style>
+</head>
+<body>
+
+<p id="myPara"> 
+Measuring the order that comes from disorder, can be seemingly impossible. However, thanks to the Ramsey Theory we are getting closer to understanding seemingly random occurrences in not only the field of mathematics, but also with real world applications. The Ramsey Theory is the study of combinatorial objects in which a degree of order must occur as the scale of the object becomes large. R(m, n) is a Ramsey number, and by symmetry R(n, m) is true as well. For any number of k-element subsets of an infinite set S into set number of classes, there will always be an infinite subset of S with all of its k-elements subsets in a singular class. The Ramsey theory is utilized to broaden diverse areas of mathematics.
+ </p>
+
+<label for="brdrval">Enter Border Red value: </label>
+<input type="text" id="brdrval" value="">
+<br><br>
+<label for="brdgval">Enter Border Green value: </label>
+<input type="text" id="brdgval" value="">
+<br><br>
+<label for="brdbval">Enter Border Blue value: </label>
+<input type="text" id="brdbval" value="">
+<br><br>
+<label for="brdwidth">Enter Border Width: </label>
+<input type="text" id="brdwidth" value="">
+<br><br>
+<label for="bgrval">Enter Background Red value: </label>
+<input type="text" id="bgrval" value="">
+<br><br>
+<label for="bggval">Enter Background Green value: </label>
+<input type="text" id="bggval" value="">
+<br><br>
+<label for="bgbval">Enter Background Blue value: </label>
+<input type="text" id="bgbval" value="">
+<br><br>
+<button type="button" onclick="switcharoo()">Change paragraph!</button>
+
+
+<script>
+
+function switcharoo() {
+	var brdR = document.getElementById("brdrval").value;
+	var brdG = document.getElementById("brdgval").value;
+	var brdB = document.getElementById("brdbval").value;
+	var brdwidth = document.getElementById("brdwidth").value;
+	var bgR = document.getElementById("bgrval").value;
+	var bgG = document.getElementById("bggval").value;
+	var bgB = document.getElementById("bgbval").value;
+	
+	console.log(brdR)	
+
+	let para = document.getElementById("myPara");
+
+	para.style.borderWidth = brdwidth + "px";
+	para.style.borderColor = `rgb(${brdR}, ${brdG}, ${brdB})`;
+	para.style.backgroundColor = `rgb(${bgR}, ${bgG}, ${bgB})`;
+
+}
+</script>
+</body>
+</html>
